@@ -12,13 +12,11 @@ function calculateTriangleArea() {
 
     // calculation
     const triangleArea = 0.5 * baseTriangle * heightTriangle;
+    const triangleAreaTwoDecimal = triangleArea.toFixed(2);
 
     // show triangle area
     const areaSpan = document.getElementById('triangle-area');
-    areaSpan.innerText = triangleArea;
-
-    console.log(triangleArea);
-
+    areaSpan.innerText = triangleAreaTwoDecimal;
 }
 
 function calculateRectangleArea() {
@@ -70,17 +68,16 @@ function getInputValueById(inputID) {
 }
 
 // set area field value by function
-function setAreaFieldValue(inputID, newValue){
+function setAreaFieldValue(inputID, newValue) {
     const areaFieldValue = document.getElementById(inputID);
     areaFieldValue.innerText = newValue;
 }
 
-function calculateEllipseArea(){
+function calculateEllipseArea() {
     const majorRadius = getInputValueById('ellipse-x');
     const minorRadius = getInputValueById('ellipse-y');
     const ellipseArea = 3.14 * majorRadius * minorRadius;
+    const areaTwoDecimal = ellipseArea.toFixed(2);
 
-    setAreaFieldValue('ellipse-area', ellipseArea)
-
-    // console.log(majorRadius, minorRadius)
+    setAreaFieldValue('ellipse-area', areaTwoDecimal)
 }
