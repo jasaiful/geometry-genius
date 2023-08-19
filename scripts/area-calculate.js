@@ -38,8 +38,7 @@ function calculateRectangleArea() {
 
     // show result
     const rectangleResult = document.getElementById('rectangle-area');
-            rectangleResult.innerText = rectangleArea
-
+    rectangleResult.innerText = rectangleArea
 
     console.log(rectangleResult);
 
@@ -47,4 +46,41 @@ function calculateRectangleArea() {
 
 
 
+function calculateParallelogramArea() {
 
+    const parallelogramBase = getInputValueById('parallelogram-base');
+    const parallelogramHeight = getInputValueById('parallelogram-height');
+
+    const parallelogramArea = parallelogramBase * parallelogramHeight;
+
+    // set area field value by function
+
+    setAreaFieldValue('parallelogram-area', parallelogramArea)
+
+    console.log(parallelogramArea);
+}
+
+// reusable get input value field in number
+
+function getInputValueById(inputID) {
+    const parallelogramBaseField = document.getElementById(inputID);
+    const parallelogramBaseText = parallelogramBaseField.value;
+    const parallelogramBaseNumber = parseFloat(parallelogramBaseText);
+    return parallelogramBaseNumber;
+}
+
+// set area field value by function
+function setAreaFieldValue(inputID, newValue){
+    const areaFieldValue = document.getElementById(inputID);
+    areaFieldValue.innerText = newValue;
+}
+
+function calculateEllipseArea(){
+    const majorRadius = getInputValueById('ellipse-x');
+    const minorRadius = getInputValueById('ellipse-y');
+    const ellipseArea = 3.14 * majorRadius * minorRadius;
+
+    setAreaFieldValue('ellipse-area', ellipseArea)
+
+    // console.log(majorRadius, minorRadius)
+}
